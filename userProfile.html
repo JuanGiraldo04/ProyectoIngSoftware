@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>Administrador - Actualizar</title>
+  <title>Administrador - Perfil</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -224,10 +224,11 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="userProfile.html">
+                <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
+               
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -246,23 +247,23 @@
                 <div class="card-body p-0">
                   <!-- Nested Row within Card Body -->
                   <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-5 d-none d-lg-block bg-profile-image"></div>
                     <div class="col-lg-7">
                       <div class="p-5">
                         <div class="text-center">
-                          <h1 class="h4 text-gray-900 mb-4">Visualizar Empleado</h1>
+                          <h1 class="h4 text-gray-900 mb-4" id="user">David Angarita</h1>
                         </div>
                         <form class="user">
                           <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                              <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre">
+                              <input type="text" class="form-control form-control-user" id="nombre" placeholder="Nombre">
                             </div>
                             <div class="col-sm-6">
-                              <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Apellido">
+                              <input type="text" class="form-control form-control-user" id="apellido" placeholder="Apellido">
                             </div>
                           </div>
                           <div class="form-group">
-                            <input type="email" disabled="true" class="form-control form-control-user" id="exampleInputEmail" placeholder="Correo electronico">
+                            <input type="email" class="form-control form-control-user" disabled="true" id="email" placeholder="Correo electronico">
                           </div>
                           <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
@@ -273,34 +274,28 @@
                             </div>
                             </div>
                             <div class="form-group">
-                            <input type="tel" class="form-control form-control-user" id="examplePhoneNumber" placeholder="Número de telefono" pattern="[0-9]{9}">
+                            <input type="tel" class="form-control form-control-user" id="telefono" placeholder="Número de telefono" pattern="[0-9]{9}">
                             </div>
                             <div class="form-group row">
                             <div class="col-sm-6  mb-3 mb-sm-0">
-                                <input type="date" class="form-control form-control-user" id="exampleFechaNacimiento">
+                                <input type="date" disabled="true" class="form-control form-control-user" id="fechaNacimiento">
                                 </div>
                              <div class="col-sm-6">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"  style="width: 100%; height: 100%;">
-                              Departamentos
-                            </button>
-                            <div class="dropdown-menu"  style="width: 100%; text-align: center">
-                              <a class="dropdown-item" href="#">Departamento 1</a>
-                              <a class="dropdown-item" href="#">Departamento 2</a>
-                              <a class="dropdown-item" href="#">Departamento 3</a>
-                            </div>
+                               <select name=select id="departamento" disabled="true" class="btn btn-primary dropdown-toggle" style="width: 100%; height: 100%;">
+                                 <option value="depto1">Departamento 1</option>
+                                 <option value="depto2">Departamento 2</option>
+                                 <option value="depto3">Departamento 3</option>
+                               </select>
                           </div>
-                            </div>
+                        </div>
                        <br>
                           <div class="form-group row">
                             <div class="col-sm-6  mb-3 mb-sm-0" class="dropdown">
-                              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"  style="width: 100%; height: 50%;">
-                                Localidad
-                              </button> 
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Localidad 1</a>
-                                <a class="dropdown-item" href="#">Localidad 2</a>
-                                <a class="dropdown-item" href="#">Localidad 3</a>
-                              </div>
+                              <select name=select id="localidad" class="btn btn-primary dropdown-toggle" style="width: 100%; height: 50%;">
+                                  <option value="local1">Localidad 1</option>
+                                  <option value="local2">Localidad 2</option>
+                                  <option value="local3">Localidad 3</option>
+                                </select>
                             </div>
                             <div class="col-sm-6 form-group green-border-focus">
                                 <textarea class="form-control" id="exampleFormControlTextarea5" rows="3"></textarea>
@@ -308,7 +303,7 @@
                             </div>
                             <hr>
                             <a href="#" class="btn btn-primary btn-user btn-block">
-                              Modificar
+                              Modificar perfil
                             </a>
                           </form>
                         </div>
