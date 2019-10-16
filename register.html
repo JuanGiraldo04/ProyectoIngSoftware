@@ -15,9 +15,11 @@
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+  <meta charset="utf-8">
+
 </head>
 
-<body id="page-top">
+<body id="page-top" style="display: none">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -266,14 +268,14 @@
                           </div>
                           <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                              <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
+                              <input type="password" class="form-control form-control-user" id="password" placeholder="Contraseña">
                             </div>
                             <div class="col-sm-6">
-                              <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirme la contraseña">
+                              <input type="password" class="form-control form-control-user" id="passwordC" placeholder="Confirme la contraseña">
                             </div>
                             </div>
                             <div class="form-group">
-                            <input type="tel" class="form-control form-control-user" id="telefono" placeholder="Número de telefono" pattern="[0-9]{9}">
+                            <input type="tel" class="form-control form-control-user" id="telefono" placeholder="Número de telefono" pattern="[0-9]{10}">
                             </div>
                             <div class="form-group row">
                             <div class="col-sm-6  mb-3 mb-sm-0">
@@ -281,9 +283,11 @@
                                 </div>
                              <div class="col-sm-6">
                                <select name=select id="departamento" class="btn btn-primary dropdown-toggle" style="width: 100%; height: 100%;">
-                                 <option value="depto1">Departamento 1</option>
-                                 <option value="depto2">Departamento 2</option>
-                                 <option value="depto3">Departamento 3</option>
+                                 <option value="Administración">Administración</option>
+                                 <option value="Campo">Campo</option>
+                                 <option value="Comercial">Comercial</option>
+                                 <option value="Produccion">Producción</option>
+                                 <option value="Tecnico y Calidad">Técnico y Calidad</option>
                                </select>
                           </div>
                         </div>
@@ -291,9 +295,8 @@
                           <div class="form-group row">
                             <div class="col-sm-6  mb-3 mb-sm-0" class="dropdown">
                               <select name=select id="localidad" class="btn btn-primary dropdown-toggle" style="width: 100%; height: 50%;">
-                                  <option value="local1">Localidad 1</option>
-                                  <option value="local2">Localidad 2</option>
-                                  <option value="local3">Localidad 3</option>
+                                  <option value="Armenia">Armenia</option>
+                                  <option value="Génova">Génova</option>
                                 </select>
                             </div>
                             <div class="col-sm-6 form-group green-border-focus">
@@ -301,9 +304,9 @@
                               </div>  
                             </div>
                             <hr>
-                            <a href="login.html" class="btn btn-primary btn-user btn-block">
+                            <h2 class="btn btn-primary btn-user btn-block" onclick="guardarEmpleado()">
                               Registrarse
-                            </a>
+                            </h2>
                           </form>
                         </div>
       </div>
@@ -352,6 +355,57 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB6faJq5VpjPOzkz7Bo2hbC-zmaJHD8o9U",
+    authDomain: "proyectoingsoft1-8a380.firebaseapp.com",
+    databaseURL: "https://proyectoingsoft1-8a380.firebaseio.com",
+    projectId: "proyectoingsoft1-8a380",
+    storageBucket: "",
+    messagingSenderId: "571768436452",
+    appId: "1:571768436452:web:fe1c06d22db6add91b1ef1"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+
+  function id(id){
+    return document.getElementById(id).value
+  }
+
+  </script>
+
+<script src="js/gestionUsuarios.js"></script>
+
+  <script type="text/javascript">
+    firebase.auth().onAuthStateChanged(function(user) {
+
+  if (user) {
+
+    document.getElementById("page-top").style.display = "block"
+
+
+  }else{
+
+    document.getElementById("page-top").style.display = "none"
+    window.location.replace("login.html");
+
+
+  }
+  
+});
+  </script>
 
 </body>
 

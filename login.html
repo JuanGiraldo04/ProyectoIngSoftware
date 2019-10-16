@@ -11,6 +11,7 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <meta charset="utf-8">
 
 </head>
 
@@ -35,24 +36,18 @@
                   </div>
                   <form class="user">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingresa tú email...">
+                      <input type="email" class="form-control form-control-user" id="loginEmail" aria-describedby="emailHelp" placeholder="Ingresa tu email">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
+                      <input type="password" class="form-control form-control-user" id="loginPassword" placeholder="Contraseña">
                     </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Recuerdame</label>
-                      </div>
-                    </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                    <h2 class="btn btn-primary btn-user btn-block" onclick="log()">
                       Iniciar sesión
-                    </a>
+                    </h2>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="forgot-password.html">¿Olvidaste tú contraseña?</a>
+                    <a class="small" href="forgot-password.html">¿Olvidaste tu contraseña?</a>
                   </div>
                 </div>
               </div>
@@ -75,6 +70,39 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB6faJq5VpjPOzkz7Bo2hbC-zmaJHD8o9U",
+    authDomain: "proyectoingsoft1-8a380.firebaseapp.com",
+    databaseURL: "https://proyectoingsoft1-8a380.firebaseio.com",
+    projectId: "proyectoingsoft1-8a380",
+    storageBucket: "",
+    messagingSenderId: "571768436452",
+    appId: "1:571768436452:web:fe1c06d22db6add91b1ef1"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+   var db = firebase.firestore();
+
+
+function id(id){
+  return document.getElementById(id).value
+}
+
+</script>
+<script src="js/login.js"></script>
 
 </body>
 
